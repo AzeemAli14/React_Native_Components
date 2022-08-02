@@ -1,14 +1,34 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Button, StatusBar} from 'react-native';
 
-const IntroScreens = ({ navigation }) => {
+export default function IntroScreens() {
+  const nav = useNavigation();
   return (
     <View style={styles.container}>
-      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "white" translucent = {true}/>
-      <Text style={{color: 'black', marginBottom: 10, fontSize: 10}}> Intro Screens </Text>
-      <Button title="Go to Components" onPress={() => navigation.navigate('Flat List')}></Button>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor="white"
+        translucent={true}
+      />
+      <Text style={styles.text}> Intro Screens </Text>
+      <View>
+        <View style={styles.button}>
+          <Button
+            title="FlatList Components"
+            onPress={() => nav.navigate('Flat List')}>
+            </Button>
+        </View>
+        <View>
+          <Button
+            title="Bottom Bar Nabigation"
+            onPress={() => nav.navigate('Tab Screen')}>
+            </Button>
+        </View>
+      </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -17,6 +37,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    color: 'black',
+    marginBottom: 10,
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  button: {
+    marginBottom: 10,
+    marginTop: 10,
+  },
 });
-
-export default IntroScreens;
