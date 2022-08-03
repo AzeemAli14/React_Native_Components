@@ -10,15 +10,27 @@ const Tab = createBottomTabNavigator();
 class Tab_Route extends Component {
   render() {
     return (
-      <Tab.Navigator initialRouteName="HomeScreen">
+      <Tab.Navigator
+        initialRouteName="HomeScreen"
+        screenOptions={{
+          tabBarActiveTintColor: '#00cc66',
+          tabBarInactiveTintColor: 'grey',
+          tabBarShowLabel: false,
+          tabBarStyle:{
+            position: 'absolute',
+            borderRadius: 50,
+            elevation: 20,
+            marginHorizontal: 10
+          }
+        }}>
         <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
-            itle: 'Home',
-          headerStyle: {
-            backgroundColor: '#00cc66',
-          },
+            title: 'Home',
+            headerStyle: {
+              backgroundColor: '#00cc66',
+            },
             tabBarIcon: ({focused}) => {
               return (
                 <Image
@@ -34,9 +46,9 @@ class Tab_Route extends Component {
           component={ProfileScreen}
           options={{
             title: 'Profile',
-          headerStyle: {
-            backgroundColor: '#00cc66',
-          },
+            headerStyle: {
+              backgroundColor: '#00cc66',
+            },
             tabBarIcon: ({focused}) => {
               return (
                 <Image

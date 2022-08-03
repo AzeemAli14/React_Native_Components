@@ -17,14 +17,17 @@ export default function IntroScreens() {
         <View style={styles.button}>
           <Button
             title="FlatList Components"
-            onPress={() => nav.navigate('Flat List')}>
-            </Button>
+            onPress={() => nav.navigate('Flat List')}></Button>
         </View>
         <View>
           <Button
             title="Bottom Bar Nabigation"
-            onPress={() => nav.navigate('Tab Screen')}>
-            </Button>
+            onPress={() => nav.navigate('Tab Screen')}></Button>
+        </View>
+        <View style={{marginTop: 10}}>
+          <Button
+            title="Top Bar Nabigation"
+            onPress={() => nav.navigate('TopBar Screen')}></Button>
         </View>
       </View>
     </View>
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     color: 'black',
     marginBottom: 10,
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   button: {
     marginBottom: 10,

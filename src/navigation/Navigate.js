@@ -19,6 +19,7 @@ import Touchable_Feedback from '../componenets/Touchable_Feedback';
 import Drawer_Layout from '../componenets/Drawer_Layout';
 import Native_Feedback from '../componenets/Native_Feedback';
 import Custom_Header from '../componenets/Custom_Header';
+import TopBarScreen from '../screens/TopBarScreen';
 
 const Stack = createNativeStackNavigator();
 class Navigate extends Component {
@@ -45,6 +46,7 @@ class Navigate extends Component {
         <Stack.Screen name='Android Drawer Layout' component={Drawer_Layout} />
         <Stack.Screen options={{headerShown: false}} name="Custom Header" component={Custom_Header} />
         <Stack.Screen options={{headerShown: false}} name='Tab Screen' component={TabScreen} />
+        <Stack.Screen options={{headerShown: false}} name='TopBar Screen' component={TopBarScreen} />
       </Stack.Navigator>
       
     );
