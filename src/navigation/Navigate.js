@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import SignupScreen from '../screens/SignupScreen';
+import TabScreen from '../screens/TabScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import IntroScreen from '../screens/IntroScreen';
 import FlatListScreen from '../screens/FlatListScreen';
-import ViewScreen from '../screens/ViewScreen';
 import Activity_Indicate from '../componenets/Activity_Indicate';
 import Custom_Button from '../componenets/Custom_Button';
 import Image_Background from '../componenets/Image_Background';
@@ -19,19 +18,18 @@ import Touchable_Opacity from '../componenets/Touchable_Opacity';
 import Touchable_Feedback from '../componenets/Touchable_Feedback';
 import Drawer_Layout from '../componenets/Drawer_Layout';
 import Native_Feedback from '../componenets/Native_Feedback';
+import Custom_Header from '../componenets/Custom_Header';
+import TopBarScreen from '../screens/TopBarScreen';
 
 const Stack = createNativeStackNavigator();
-
-export class Navigate extends Component {
+class Navigate extends Component {
   render() {
     return (
       <Stack.Navigator initialRouteName="IntroScreen">
         <Stack.Screen options={{headerShown:false}} name='IntroScreen' component={IntroScreen} />
-        <Stack.Screen name='ViewScreen' component={ViewScreen} />
-        <Stack.Screen name='SignupScreen' component={SignupScreen} />
         <Stack.Screen name='Flat List' component={FlatListScreen} />
         
-        <Stack.Screen name='Activity Indicator' component={Activity_Indicate} />
+        <Stack.Screen name='Activity Indicator' component={Activity_Indicate}/>
         <Stack.Screen name='Buttons' component={Custom_Button} />
         <Stack.Screen name='Image Background' component={Image_Background} />
         <Stack.Screen name='Image View' component={Image_View} />
@@ -45,8 +43,12 @@ export class Navigate extends Component {
         <Stack.Screen name='Touchable Opacity' component={Touchable_Opacity} />
         <Stack.Screen name='Touchable Without Feedback' component={Touchable_Feedback} />
         <Stack.Screen name='Touchable Native Feedback' component={Native_Feedback} />
-        <Stack.Screen name= 'Android Drawer Layout' component={Drawer_Layout} />
+        <Stack.Screen name='Android Drawer Layout' component={Drawer_Layout} />
+        <Stack.Screen options={{headerShown: false}} name="Custom Header" component={Custom_Header} />
+        <Stack.Screen options={{headerShown: false}} name='Tab Screen' component={TabScreen} />
+        <Stack.Screen options={{headerShown: false}} name='TopBar Screen' component={TopBarScreen} />
       </Stack.Navigator>
+      
     );
   }
 }

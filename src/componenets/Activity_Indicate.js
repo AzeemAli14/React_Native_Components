@@ -1,15 +1,20 @@
-import React, { Component }from "react";
-import {ActivityIndicator, View} from "react-native";
+import React from 'react';
+import {ActivityIndicator, View, Text, StyleSheet} from 'react-native';
 
-class Activity_Indicate extends Component {
-    render () {
-        return (
-            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                
-                <ActivityIndicator size="large" color="#ff0000" />
-            </View>
-        );
-    }
+export default function Activity_Indicate({ route }) {
+    const {ItemName} = route.params;
+  return (
+    <View style={styles.body}>
+      <Text style={{color: 'black', marginBottom: 30, fontSize: 20}}> Component Name: {JSON.stringify(ItemName)}</Text>
+      <ActivityIndicator size="large" color="#ff0000" />
+    </View>
+  );
 }
 
-export default Activity_Indicate;
+const styles = StyleSheet.create ({
+    body: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center'
+    }
+})

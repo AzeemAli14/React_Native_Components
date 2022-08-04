@@ -1,14 +1,17 @@
 import React,{Component} from "react";
 import { View, Image, ImageBackground, StyleSheet } from "react-native";
+import ImagePath from "../constants/ImagePath";
 
 class Image_Background extends Component {
     render () {
         return (
             <View style={{flex: 1, alignItems: 'center', justifyContent:'center'}}>
-                <ImageBackground source={require('../assets/orange.jpeg')} resizeMode='cover' style={styles.image}>
+                <ImageBackground source={ImagePath.icBackground} resizeMode='contain' style={styles.image}>
+                <View style={{justifyContent: 'center', alignItems: 'center', marginBottom: 300}}>
                 <Image
-                source={require('../assets/active.png')} style={{justifyContent: 'center', alignItems: 'center', margin: '30%'}}
+                source={ImagePath.icImage} 
                 />
+                </View>
                 </ImageBackground>
             </View>
         );
@@ -19,7 +22,9 @@ class Image_Background extends Component {
 const styles = StyleSheet.create({
     image: {
       flex: 1,
+      alignItems: 'center',
       justifyContent: "center",
+
       width: '100%',
       height: '100%',
     }
